@@ -44,6 +44,7 @@ See `docs/keymap-reference.md` for the chord cheat-sheet.
 
 ## Documentation
 
+- [**Getting started**](docs/getting-started.md) — **start here if new to nvim**: modes, basic commands, daily cheatsheet
 - [Workflow](docs/workflow.md) — the agentic-nvim cycle, end-to-end
 - [Keymap reference](docs/keymap-reference.md) — which key triggers what
 - [LSP setup](docs/lsp-setup.md) — Mason install + per-language details
