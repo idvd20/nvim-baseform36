@@ -909,7 +909,13 @@ do
   vim.pack.add { { src = gh 'nvim-treesitter/nvim-treesitter', version = 'main' } }
 
   -- Ensure basic parsers are installed
-  local parsers = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc' }
+  local parsers = {
+    'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc',
+    -- web stack
+    'javascript', 'typescript', 'tsx', 'css', 'scss', 'json', 'jsonc', 'yaml',
+    -- PHP backend
+    'php', 'phpdoc',
+  }
   require('nvim-treesitter').install(parsers)
 
   ---@param buf integer
