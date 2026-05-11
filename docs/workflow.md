@@ -6,9 +6,11 @@ This config is built for a specific workflow: Claude Code writes the code, nvim 
 
 ### 1. Open the file Claude wrote
 
-Tap `Space` (leader), then `f` then `f` — telescope opens a fuzzy file finder. Type a partial filename, press Enter.
+Tap `Space` (leader), then `s` then `f` — telescope opens a fuzzy file finder. Type a partial filename, press Enter.
 
-Alternative: `Space` `f` `g` — live grep across the repo. Type the text you remember, press Enter on the match.
+Alternative: `Space` `s` `g` — live grep across the repo. Type the text you remember, press Enter on the match.
+
+(In this kickstart variant, telescope lives under `<leader>s*` — think "**S**earch". `<leader>f` alone is bound to format-on-demand.)
 
 ### 2. Review the diff hunk-by-hunk
 

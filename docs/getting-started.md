@@ -32,13 +32,17 @@ Tap `Space` (right thumb tap — your leader key). Wait ~250ms. **which-key** po
 
 | Sequence | What it does |
 |---|---|
-| `Space` `f` `f` | Find file by name (telescope fuzzy finder) |
-| `Space` `f` `g` | Grep file contents — type any text, get matches |
-| `Space` `f` `r` | Recent files |
-| `Space` `f` `b` | List open buffers (files) |
-| `Space` `f` `h` | Search nvim help |
+| `Space` `s` `f` | **[S]earch [F]iles** — fuzzy find by name (telescope) |
+| `Space` `s` `g` | **[S]earch by [G]rep** — search file contents |
+| `Space` `s` `.` | Recent files |
+| `Space` `Space` | List open buffers (literally space twice) |
+| `Space` `s` `h` | Search nvim help |
+| `Space` `s` `w` | Search current word under cursor |
+| `Space` `/` | Fuzzy-search inside the current buffer |
 
 Inside the picker: type to filter. Arrow keys to highlight. `Enter` to open. `Esc` to cancel.
+
+**Memory tip:** in this kickstart variant, search lives under `<leader>s*` (think "**S**earch"). `<leader>f` alone is bound to format the current file (conform.nvim).
 
 ## Read a git diff
 
@@ -135,7 +139,7 @@ Want to walk diff hunks one at a time?
 Try this end-to-end:
 
 1. `cd ~/Projects/baseform36 && nvim`
-2. Tap `Space` `f` `f`, type `keymap`, hit Enter. Should open `config/miryoku-colemakdh/baseform.keymap`.
+2. Tap `Space` `s` `f`, type `keymap`, hit Enter. Should open `config/miryoku-colemakdh/baseform.keymap`.
 3. Hold right thumb (SPC) + tap arrows on left hand. Cursor moves.
 4. Tap `/`, type `dev_layer`, hit Enter. Cursor jumps to the layer.
 5. Hold TAB + tap left pinky `A`. Should fire `:w<CR>` (nothing visible since no changes — that's expected).
