@@ -30,11 +30,11 @@ ln -s ~/Projects/nvim-baseform36 ~/.config/nvim
 # Symlink tmux config
 ln -s ~/Projects/nvim-baseform36/tmux.conf ~/.tmux.conf
 
-# Launch nvim — lazy.nvim auto-installs plugins
+# Launch nvim — vim.pack auto-installs plugins
 nvim
 ```
 
-First launch installs ~30 plugins. Wait for completion, then run `:Mason` and wait for all LSPs and formatters to show `[Installed]`.
+First launch installs ~12 plugins via Neovim's built-in `vim.pack`. Wait for completion, then run `:Mason` and wait for all LSPs and formatters to show `[Installed]`.
 
 ## Keyboard
 

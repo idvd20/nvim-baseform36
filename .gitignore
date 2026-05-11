@@ -1,12 +1,12 @@
-# nvim lazy-lock — keep or ignore based on preference
-# Keep it for reproducibility:
-# (no entry for lazy-lock.json — track it)
+# vim.pack lockfile is tracked for reproducibility — DO NOT add nvim-pack-lock.json here.
 
-# Build / install artifacts
-plugin/packer_compiled.lua
-plugin/lazy.lua
+# Auto-generated help tags (rebuilt by :helptags)
+doc/tags
+
+# Local overrides / language server config
 .luarc.json
 .luarc.jsonc
+lua/local/
 
 # OS
 .DS_Store
@@ -16,6 +16,3 @@ plugin/lazy.lua
 # Editor state
 .netrwhist
 shada/
-
-# Local-only overrides
-lua/local/
