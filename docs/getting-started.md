@@ -51,17 +51,56 @@ cd ~/Projects/some-repo
 nvim
 ```
 
-Then `Space` `g` `d` — **diffview** opens a side-by-side view of all uncommitted changes with a file tree on the left.
+Then `Space` `g` `d` — **diffview** opens a three-panel view:
 
-In diffview:
-- Arrow keys (NAV layer) to navigate
-- `Tab` to switch between left/right panes
-- `q` to close
-- Or `Space` `g` `D` to close
+```
+┌────────────┬─────────────┬─────────────┐
+│ File panel │ HEAD (left) │ Working tree│
+│ (sidebar)  │ — original  │ — changed   │
+└────────────┴─────────────┴─────────────┘
+```
 
-Want to walk diff hunks one at a time?
+**Navigating the three panels:**
+
+| Key | Action |
+|---|---|
+| `Ctrl+w` then `h` | Jump to left panel (file list, then HEAD) |
+| `Ctrl+w` then `l` | Jump to right panel (working tree) |
+| `Ctrl+w` `w` | Cycle to next panel |
+| `:DiffviewToggleFiles` then `Enter` | Hide/show the file sidebar — **use this if panels look too small** |
+
+**Inside the file sidebar:**
+- Arrow keys (NAV layer) up/down through files
+- `Enter` to open the highlighted file
+- `Tab` / `Shift+Tab` next/previous file
+
+**Inside the diff buffers (middle/right) — hunk-by-hunk review:**
+- `]c` jump to **next** changed hunk (cursor must be in a diff buffer, not the sidebar)
+- `[c` jump to **previous** hunk
+- Arrows (NAV layer) for line-by-line scroll, PGDN/PGUP for page
+
+**Close diffview:**
+- Tap `Space` `g` `D` (capital D), or
+- Type `:DiffviewClose<Enter>`
+
+**Once your DEV-layer firmware is flashed:**
 - Hold right inner thumb (TAB → DEV layer) + tap left index inner bottom (`V` position) → next hunk
 - Hold TAB + tap left index bottom (`D` position) → previous hunk
+
+(Same `]c`/`[c` commands, just chorded instead of typed.)
+
+## Stage / preview / blame a hunk
+
+In any file with git changes (gitsigns shows `+`, `~`, `_` in the gutter), navigate your cursor to the hunk first (`]c` to get there), then:
+
+| Key | Action |
+|---|---|
+| `<leader>hs` | [s]tage hunk (preps for commit) |
+| `<leader>hr` | [r]eset hunk (discard local change) |
+| `<leader>hp` | [p]review hunk in a popup |
+| `<leader>hb` | [b]lame line (full info popup) |
+| `<leader>tb` | [t]oggle inline [b]lame for every line |
+| `vih` | Visual-select the current hunk (use with `y`/`d`/etc.) |
 
 ## Edit a file
 

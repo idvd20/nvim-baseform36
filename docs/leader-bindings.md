@@ -23,17 +23,24 @@ Mnemonic: **S** for **S**earch. The whole search family lives under `<leader>s`.
 | `<leader><leader>` | List open buffers (literally space twice) | kickstart |
 | `<leader>/` | Fuzzy search inside current buffer | kickstart |
 
-## Editing — `<leader>f`, `<leader>q`, `<leader>t*`
+## Editing / format / quickfix
 
 | Sequence | Action | Source |
 |---|---|---|
 | `<leader>f` | Format current buffer (conform.nvim) | kickstart |
 | `<leader>q` | Open diagnostic [Q]uickfix list | kickstart |
-| `<leader>th` | [T]oggle Inlay [H]ints | kickstart |
 
-## Git — `<leader>g*` (custom)
+## Toggles — `<leader>t*`
 
-Custom bindings I added for diffview and fugitive:
+| Sequence | Action | Source |
+|---|---|---|
+| `<leader>th` | [T]oggle inlay [H]ints | kickstart |
+| `<leader>tb` | [T]oggle inline git [B]lame on all lines | gitsigns |
+| `<leader>tw` | [T]oggle intra-line [W]ord diff highlighting | gitsigns |
+
+## Git — high-level views (`<leader>g*`)
+
+Custom bindings for diffview and fugitive.
 
 | Sequence | Action | Source |
 |---|---|---|
@@ -41,8 +48,30 @@ Custom bindings I added for diffview and fugitive:
 | `<leader>gD` | [G]it [D]iffview close | this config |
 | `<leader>gh` | [G]it file [H]istory (diffview) | this config |
 | `<leader>gs` | [G]it [S]tatus (fugitive) | this config |
-| `<leader>gb` | [G]it [B]lame | this config |
+| `<leader>gb` | [G]it [B]lame (fugitive — full buffer) | this config |
 | `<leader>gl` | [G]it [L]og --oneline | this config |
+
+## Git — hunk operations (`<leader>h*`)
+
+These work in any file with gitsigns gutter marks (`+`, `~`, `_`). They act on the current hunk under your cursor.
+
+> **`<leader>gb` vs `<leader>hb`** — both involve blame, but do different things. `<leader>gb` (fugitive) opens a navigable full-file blame buffer for exploration. `<leader>hb` (gitsigns) is a single-line popup for a quick "who wrote this line?" check.
+
+| Sequence | Action | Source |
+|---|---|---|
+| `<leader>hs` | [s]tage hunk (preps for commit) | gitsigns |
+| `<leader>hr` | [r]eset hunk (discard local change) | gitsigns |
+| `<leader>hp` | [p]review hunk (inline popup) | gitsigns |
+| `<leader>hi` | preview hunk [i]nline (alt rendering) | gitsigns |
+| `<leader>hb` | [b]lame line (full info popup) | gitsigns |
+| `<leader>hd` | [d]iff against index | gitsigns |
+| `<leader>hD` | [D]iff against last commit | gitsigns |
+| `<leader>hS` | [S]tage whole buffer | gitsigns |
+| `<leader>hR` | [R]eset whole buffer | gitsigns |
+| `<leader>hq` | git hunks [q]uickfix (current file) | gitsigns |
+| `<leader>hQ` | git hunks [Q]uickfix (whole repo) | gitsigns |
+| `<leader>hs` (visual) | [s]tage selected lines | gitsigns |
+| `<leader>hr` (visual) | [r]eset selected lines | gitsigns |
 
 ## File explorer
 
@@ -50,6 +79,17 @@ Custom bindings I added for diffview and fugitive:
 |---|---|---|
 | `<leader>e` | File [E]xplorer (oil.nvim) | this config |
 | `-` | Open parent directory in oil | this config |
+
+## Non-leader keys worth knowing
+
+These aren't leader bindings, but they're closely related to the workflow:
+
+| Key | Action | Source |
+|---|---|---|
+| `]c` (normal mode) | Jump to next git hunk | gitsigns |
+| `[c` (normal mode) | Jump to previous git hunk | gitsigns |
+| `ih` (text object) | "inside hunk" — use with `v`/`d`/`y`/`c` | gitsigns |
+| `<C-^>` | Toggle to alternate buffer (last two files) | nvim built-in |
 
 ## Discovery
 
