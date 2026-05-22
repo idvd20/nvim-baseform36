@@ -7,9 +7,9 @@ Neovim + tmux configuration tuned for the [Baseform 36-key keyboard](https://git
 | File | Purpose |
 |---|---|
 | `init.lua` | kickstart.nvim-derived config |
-| `lua/custom/plugins/*.lua` | added plugins (diffview, fugitive, autotag, oil) |
+| `lua/custom/plugins/*.lua` | added plugins (diffview, fugitive, autotag, oil, lualine, bufferline) |
 | `tmux.conf` | minimal tmux for session-per-worktree |
-| `docs/` | workflow, keymap reference, LSP setup, plugin rationale |
+| `doc/` | markdown docs (workflow, keymap reference, LSP, plugins) + `kickstart.txt` for `:help kickstart` |
 
 ## Install
 
@@ -40,17 +40,17 @@ First launch installs ~12 plugins via Neovim's built-in `vim.pack`. Wait for com
 
 This config assumes the [Baseform 36-key keymap](https://github.com/idvd20/baseform36/tree/main/docs/keymap) with the DEV layer (right inner thumb hold → left hand becomes nvim action keys).
 
-See `docs/keymap-reference.md` for the chord cheat-sheet.
+See `doc/keymap-reference.md` for the chord cheat-sheet.
 
 ## Documentation
 
-- [**Getting started**](docs/getting-started.md) — **start here if new to nvim**: modes, basic commands, daily cheatsheet
-- [Workflow](docs/workflow.md) — the agentic-nvim cycle, end-to-end
-- [Keymap reference](docs/keymap-reference.md) — which key triggers what
-- [LSP setup](docs/lsp-setup.md) — Mason install + per-language details
-- [Plugins](docs/plugins.md) — what each plugin does and why it earned its slot
-- [Leader bindings](docs/leader-bindings.md) — `<leader>` cheat-sheet
-- [tmux](docs/tmux.md) — session-per-worktree pattern
+- [**Getting started**](doc/getting-started.md) — **start here if new to nvim**: modes, basic commands, daily cheatsheet
+- [Workflow](doc/workflow.md) — the agentic-nvim cycle, end-to-end
+- [Keymap reference](doc/keymap-reference.md) — which key triggers what
+- [LSP setup](doc/lsp-setup.md) — Mason install + per-language details
+- [Plugins](doc/plugins.md) — what each plugin does and why it earned its slot
+- [Leader bindings](doc/leader-bindings.md) — `<leader>` cheat-sheet
+- [tmux](doc/tmux.md) — session-per-worktree pattern
 
 ## License
 

@@ -77,8 +77,9 @@ These work in any file with gitsigns gutter marks (`+`, `~`, `_`). They act on t
 
 | Sequence | Action | Source |
 |---|---|---|
-| `<leader>e` | File [E]xplorer (oil.nvim) | this config |
+| `<leader>e` | File [E]xplorer (oil.nvim — editable buffer) | this config |
 | `-` | Open parent directory in oil | this config |
+| `<leader>r` | Neo-tree [r]eveal current file in right sidebar | this config |
 
 ## Non-leader keys worth knowing
 
@@ -86,6 +87,9 @@ These aren't leader bindings, but they're closely related to the workflow:
 
 | Key | Action | Source |
 |---|---|---|
+| `\` (normal mode) | Toggle neo-tree sidebar (right side) | this config |
+| `Shift+l` (normal) | Next buffer (bufferline cycle) | this config |
+| `Shift+h` (normal) | Previous buffer (bufferline cycle) | this config |
 | `]c` (normal mode) | Jump to next git hunk | gitsigns |
 | `[c` (normal mode) | Jump to previous git hunk | gitsigns |
 | `ih` (text object) | "inside hunk" — use with `v`/`d`/`y`/`c` | gitsigns |
