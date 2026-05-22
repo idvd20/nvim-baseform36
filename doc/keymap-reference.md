@@ -1,6 +1,6 @@
 # Keymap Reference
 
-This config is tuned for the [Baseform 36-key Miryoku Colemak-DH layout](https://github.com/idvd20/baseform36/tree/main/docs/keymap). See the source repo for full layer visualizations.
+This config is tuned for the [Baseform 36-key Miryoku Colemak-DH layout](https://github.com/idvd20/baseform36/tree/main/config/miryoku-colemakdh). See the source repo for full layer visualizations.
 
 ## Layers at a glance
 

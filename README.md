@@ -38,7 +38,7 @@ First launch installs ~12 plugins via Neovim's built-in `vim.pack`. Wait for com
 
 ## Keyboard
 
-This config assumes the [Baseform 36-key keymap](https://github.com/idvd20/baseform36/tree/main/docs/keymap) with the DEV layer (right inner thumb hold → left hand becomes nvim action keys).
+This config assumes the [Baseform 36-key keymap (Miryoku Colemak-DH layer)](https://github.com/idvd20/baseform36/tree/main/config/miryoku-colemakdh) with the DEV layer (right inner thumb hold → left hand becomes nvim action keys).
 
 See `doc/keymap-reference.md` for the chord cheat-sheet.
 
