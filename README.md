@@ -1,6 +1,6 @@
 # nvim-baseform36
 
-Neovim + tmux configuration tuned for the [Baseform 36-key keyboard](https://github.com/idvd20/baseform36) running a Miryoku Colemak-DH layout with a custom DEV layer. Built for an agentic coding workflow: Claude Code does the writing, nvim does diff review + small edits, supacode + git worktrees for parallel branches.
+Neovim configuration tuned for the [Baseform 36-key keyboard](https://github.com/idvd20/baseform36) running a Miryoku Colemak-DH layout with a custom DEV layer. Built for an agentic coding workflow: Claude Code does the writing, nvim does diff review + small edits, Supacode owns worktree + session orchestration. A minimal `tmux.conf` is included as a fallback for SSH / non-Supacode environments.
 
 ## What's in here
 
@@ -8,15 +8,15 @@ Neovim + tmux configuration tuned for the [Baseform 36-key keyboard](https://git
 |---|---|
 | `init.lua` | kickstart.nvim-derived config |
 | `lua/custom/plugins/*.lua` | added plugins (diffview, fugitive, autotag, oil, lualine, bufferline) |
-| `tmux.conf` | minimal tmux for session-per-worktree |
+| `tmux.conf` | minimal tmux for SSH / non-Supacode environments (optional) |
 | `doc/` | markdown docs (workflow, keymap reference, LSP, plugins) + `kickstart.txt` for `:help kickstart` |
 
 ## Install
 
-Prerequisites: Neovim 0.10+, git, gh, tmux 3+, fd, ripgrep, node.
+Prerequisites: Neovim 0.10+, git, gh, fd, ripgrep, node.
 
 ```bash
-brew install neovim git gh tmux fd ripgrep node   # macOS
+brew install neovim git gh fd ripgrep node   # macOS
 
 # Clone this repo
 git clone https://github.com/idvd20/nvim-baseform36.git ~/Projects/nvim-baseform36
@@ -27,11 +27,15 @@ mv ~/.config/nvim ~/.config/nvim.bak 2>/dev/null
 # Symlink into nvim's expected path
 ln -s ~/Projects/nvim-baseform36 ~/.config/nvim
 
-# Symlink tmux config
-ln -s ~/Projects/nvim-baseform36/tmux.conf ~/.tmux.conf
-
 # Launch nvim — vim.pack auto-installs plugins
 nvim
+```
+
+Optional — only if you work on SSH / remote machines without Supacode:
+
+```bash
+brew install tmux                                            # macOS
+ln -s ~/Projects/nvim-baseform36/tmux.conf ~/.tmux.conf
 ```
 
 First launch installs ~12 plugins via Neovim's built-in `vim.pack`. Wait for completion, then run `:Mason` and wait for all LSPs and formatters to show `[Installed]`.
@@ -50,7 +54,7 @@ See `doc/keymap-reference.md` for the chord cheat-sheet.
 - [LSP setup](doc/lsp-setup.md) — Mason install + per-language details
 - [Plugins](doc/plugins.md) — what each plugin does and why it earned its slot
 - [Leader bindings](doc/leader-bindings.md) — `<leader>` cheat-sheet
-- [tmux](doc/tmux.md) — session-per-worktree pattern
+- [tmux](doc/tmux.md) — fallback for SSH / non-Supacode environments (optional)
 
 ## License
 

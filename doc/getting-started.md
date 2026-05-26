@@ -255,88 +255,9 @@ Try this end-to-end:
 
 If all six work, your setup is functional. From here it's just practice.
 
-## Pairing with tmux
+## tmux (optional)
 
-Once nvim feels comfortable, tmux is the next layer to pick up. This config uses tmux for **one specific thing**: keeping a long-running session per branch (or per worktree). When you close a terminal window, the nvim + shell state inside that tmux session keeps running. Reattach later and you're exactly where you left off.
-
-You won't use tmux for splits (supacode handles that). You'll only use sessions.
-
-### Mental model (one paragraph)
-
-A tmux **session** is a persistent named workspace running in the background. You "attach" to a session to see and interact with it; you "detach" to leave it running. Sessions persist until your machine reboots (or you kill them). Inside a session there are windows (like tabs) and panes (splits), but again — you don't need those here.
-
-### The four commands that cover 95% of usage
-
-| Command | What it does |
-|---|---|
-| `tmux ls` | List all running sessions |
-| `tmux new -s <name>` | Create a new session named `<name>` and attach to it |
-| `tmux attach -t <name>` | Reattach to an existing session by name |
-| `tmux switch -t <name>` | (Already inside tmux) Jump to a different session |
-
-To **detach** from a session (leave it running, return to plain shell): hit `Ctrl+b` then `d`. That `Ctrl+b` is the tmux **prefix** — a "now I want to talk to tmux, not the shell inside it" signal. Every tmux key combo starts with the prefix.
-
-### Bindings already wired in `tmux.conf`
-
-After the prefix (`Ctrl+b`), these work:
-
-| Keys | Action |
-|---|---|
-| `Ctrl+b` then `W` | Prompts for a name, creates a session at the current directory |
-| `Ctrl+b` then `S` | Visual session switcher (arrow keys, Enter) |
-| `Ctrl+b` then `d` | **D**etach from current session |
-| `Ctrl+b` then `?` | Show every tmux binding (built-in cheat sheet) |
-
-### Trying it for the first time
-
-```bash
-# 1. Start a named session
-tmux new -s scratch
-
-# 2. You're now inside tmux. Run nvim, edit something, don't save.
-nvim /tmp/hello.txt
-
-# 3. Detach — Ctrl+b then d. Back in your plain shell.
-
-# 4. Close the terminal window entirely. Open a new one.
-
-# 5. List what's running:
-tmux ls
-
-# 6. Reattach:
-tmux attach -t scratch
-# nvim is right where you left it.
-```
-
-That round-trip is the whole point of tmux for this workflow.
-
-### The day-to-day pattern
-
-One session per branch (or worktree directory):
-
-```bash
-# Starting work on a branch
-tmux new -s feature-x -c ~/Projects/myrepo-worktrees/feature-x
-
-# Switch between branches (already inside tmux)
-# Ctrl+b S → pick from the list
-# or:
-tmux switch -t main
-```
-
-The `-c <path>` flag sets the starting directory — useful when each branch lives in its own worktree.
-
-### Getting used to it (one-week onboarding)
-
-Don't try to memorize tmux's full surface. Practice this loop:
-
-1. **Days 1–2:** Always start nvim from inside tmux. Use only `tmux new -s <name>` and `Ctrl+b d` to detach. Reattach after closing terminal windows. Goal: trust that the session survives.
-2. **Days 3–4:** Add `Ctrl+b S` (session switcher). Create 2–3 sessions for different projects. Switch between them.
-3. **Days 5–7:** Add `Ctrl+b W` for worktree-aware session creation. By now `Ctrl+b` should be a reflex.
-
-After a week, tmux becomes invisible — you stop thinking about it and just expect everything to still be there when you come back.
-
-For more depth (the "why session-per-worktree" rationale, advanced bindings), see [tmux.md](tmux.md).
+Supacode owns worktree creation, tabs, surface splits, per-worktree run scripts, and session persistence — so locally you don't need tmux. If you work on an SSH / remote machine where Supacode isn't available, see [tmux.md](tmux.md) for the session-per-worktree fallback.
 
 ## When you get stuck
 
