@@ -20,7 +20,6 @@ These ship with kickstart as `lua/kickstart/plugins/*.lua` and are switched on i
 | **diffview.nvim** | Best-in-class git diff UX. `:DiffviewOpen` shows full diff with file tree, side-by-side. Core to the workflow — diff review is what nvim is *for* here. |
 | **vim-fugitive** | `:G`, `:Gdiffsplit`, `:Gblame`, `:Git log` — the standard for git ops inside nvim. Pairs with diffview. |
 | **nvim-ts-autotag** | Auto-closes JSX/TSX/HTML tags. Tiny but daily quality-of-life. |
-| **oil.nvim** | Edit the filesystem like a buffer — rename/move/delete by editing lines, `:w` to commit. Bound to `<leader>e` and `-`. Coexists with neo-tree; they solve different problems (see [getting-started.md](getting-started.md)). |
 | **lualine.nvim** | Statusline showing mode, branch, diff stats, diagnostics, file path, filetype, position. Replaces kickstart's `mini.statusline`. |
 | **bufferline.nvim** | Tab-style row at the top showing open buffers, with LSP diagnostic dots. Cycle with `Shift+l` / `Shift+h`. Reserves a label slot above neo-tree. |
 

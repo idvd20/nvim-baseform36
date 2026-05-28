@@ -77,9 +77,8 @@ These work in any file with gitsigns gutter marks (`+`, `~`, `_`). They act on t
 
 | Sequence | Action | Source |
 |---|---|---|
-| `<leader>e` | File [E]xplorer (oil.nvim — editable buffer) | this config |
-| `-` | Open parent directory in oil | this config |
 | `<leader>r` | Neo-tree [r]eveal current file in right sidebar | this config |
+| `\` | Neo-tree toggle right-side file tree | this config |
 
 ## Non-leader keys worth knowing
 

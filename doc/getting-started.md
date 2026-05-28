@@ -9,7 +9,6 @@ The config is kickstart.nvim plus a curated set of additions. The pieces that ma
 | Plugin | What it does |
 |---|---|
 | **neo-tree** | File tree on the **right** side. Toggle with `\`. Reveal the current file in the tree with `<leader>r`. |
-| **oil.nvim** | Alternative file manager — opens the current directory as an *editable buffer*. Rename / move / delete by editing the lines, then `:w` to commit. Bound to `<leader>e` or `-`. |
 | **bufferline** | Tab strip at the top showing open buffers. `Shift+l` next, `Shift+h` previous. |
 | **lualine** | Rich statusline at the bottom: mode, git branch + diff stats, LSP diagnostics, file path, line/col. |
 | **treesitter** | Syntax-aware highlighting and indentation for every language you open. |
@@ -224,8 +223,6 @@ In any file with git changes (gitsigns shows `+`, `~`, `_` in the gutter), navig
 | `Space` `g` `s` | fugitive   | git status                            |
 | `Space` `g` `b` | fugitive   | git blame                             |
 | `Space` `g` `l` | fugitive   | git log                               |
-| `Space` `e`     | oil        | file explorer (edit FS like a buffer) |
-| `-`             | oil        | open parent directory                 |
 | `\`             | neo-tree   | toggle right-side file tree           |
 | `Space` `r`     | neo-tree   | reveal current file in tree           |
 | `Shift+l`       | bufferline | next buffer                           |

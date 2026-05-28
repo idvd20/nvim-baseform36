@@ -167,6 +167,13 @@ do
   -- Minimal number of screen lines to keep above and below the cursor.
   vim.o.scrolloff = 10
 
+  -- Indent defaults: 2 spaces, no hard tabs. Per-project overrides come from
+  -- .editorconfig (built-in support) or guess-indent.nvim sniffing existing files.
+  vim.o.expandtab = true
+  vim.o.tabstop = 2
+  vim.o.shiftwidth = 2
+  vim.o.softtabstop = 2
+
   -- if performing an operation that would fail due to unsaved changes in the buffer (like `:q`),
   -- instead raise a dialog asking if you wish to save the current file(s)
   -- See `:help 'confirm'`
@@ -386,15 +393,18 @@ do
   vim.pack.add { gh 'folke/tokyonight.nvim' }
   ---@diagnostic disable-next-line: missing-fields
   require('tokyonight').setup {
+    transparent = true, -- Use the terminal background instead of the theme's
     styles = {
       comments = { italic = false }, -- Disable italics in comments
+      sidebars = 'transparent', -- Make sidebars (e.g. neo-tree) transparent too
+      floats = 'transparent', -- Make floating windows transparent too
     },
   }
 
   -- Load the colorscheme here.
   -- Like many other themes, this one has different styles, and you could load
   -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-  vim.cmd.colorscheme 'tokyonight-night'
+  vim.cmd.colorscheme 'tokyonight-moon'
 
   -- Highlight todo, notes, etc in comments
   vim.pack.add { gh 'folke/todo-comments.nvim' }

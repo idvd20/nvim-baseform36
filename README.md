@@ -7,7 +7,7 @@ Neovim configuration tuned for the [Baseform 36-key keyboard](https://github.com
 | File | Purpose |
 |---|---|
 | `init.lua` | kickstart.nvim-derived config |
-| `lua/custom/plugins/*.lua` | added plugins (diffview, fugitive, autotag, oil, lualine, bufferline) |
+| `lua/custom/plugins/*.lua` | added plugins (diffview, fugitive, autotag, lualine, bufferline) |
 | `tmux.conf` | minimal tmux for SSH / non-Supacode environments (optional) |
 | `doc/` | markdown docs (workflow, keymap reference, LSP, plugins) + `kickstart.txt` for `:help kickstart` |
 
